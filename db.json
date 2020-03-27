@@ -1,0 +1,21 @@
+{
+  "skills": { "pages": 1, "page": 0, "top": 20, "items": [
+    {
+      "id": 1, "SkillName": "Java" 
+    },
+    {
+      "id": 2, "SkillName": "Java Script" 
+    },
+    {
+      "id": 3, "SkillName": "JScript" 
+    },
+    {
+      "id": 4, "SkillName": "PHP" 
+    },
+    {
+      "id": 5, "SkillName": "#C" 
+    },
+    {
+      "id": 6, "SkillName": "Mysql" 
+    }]} 
+}
