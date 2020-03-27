@@ -1,0 +1,44 @@
+<h1>
+    Skill List
+</h1>
+
+<form>
+    <div class="form-group form-inline" [formGroup]="searchForm">
+        Full text search: <input class="form-control ml-2" type="text" formControlName="filter"/>
+    </div>
+  </form>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">Skill Id</th>
+      <th scope="col">Skill Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let skill of listSkills, index as i">
+      <td>
+        {{ skill?.id }}
+      </td>
+      <td>{{ skill?.SkillName }}</td>
+    </tr>
+    </tbody>
+  
+  </table>
+
+<div class="d-flex justify-content-between p-2">
+  <!-- <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize">
+  </ngb-pagination> -->
+  <ul class="pagination"><li class="page-item" [class.disabled]="currentPage<2"><a aria-label="Previous" class="page-link" (click)="currentPage = (currentPage - 1);getSkills(currentPage)" tabindex="-1" aria-disabled="true">
+ <span aria-hidden="true">«</span></a></li>
+ <ng-container *ngFor="let page of collectionSize">
+    <li class="page-item" [class.active]="currentPage==(page + 1)" ><a class="page-link" (click)="currentPage = (page + 1); getSkills(page + 1)"> {{page+1}} </a></li>
+ </ng-container>
+  <li class="page-item" [class.disabled]="currentPage == collectionSize?.length"><a aria-label="Next" class="page-link" (click)="currentPage = (currentPage + 1);getSkills(currentPage)"><span aria-hidden="true">»</span></a></li>
+</ul>
+  <select class="custom-select" style="width: auto" [(ngModel)]="pageSize">
+    <option [ngValue]="2">2 items per page</option>
+    <option [ngValue]="4">4 items per page</option>
+    <option [ngValue]="6">6 items per page</option>
+  </select>
+</div>
